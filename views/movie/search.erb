@@ -11,7 +11,7 @@
     <% search_results.each do |res| %>
         <div>
             <li class="search_links"><a href="/movie_page?mov_id=<%=res['id']%>"><%=res['original_title']%></li>
-            <a href="m/movie_page?mov_id=<%=res['id']%>"><img src="https://image.tmdb.org/t/p/w500<%= res['poster_path']%>" alt="movie poster"></a>
+            <a href="/movie_page?mov_id=<%=res['id']%>"><img src="https://image.tmdb.org/t/p/w500<%= res['poster_path']%>" alt="movie poster"></a>
         </div>
     <% end %>
 </div>
