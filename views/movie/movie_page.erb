@@ -6,6 +6,9 @@
         <h2>Overview: <%= data['overview'] %></h1>
         <h1>Status: <%= data['status'] %></h1>
         <h1>Runtime (mins): <%= data['runtime'] %></h1>
+        <%if data['release_date']%>
+            <h1>Release Date:  <%= data['release_date'] %></h1>
+        <%end%>
         <h1><%= data['popularity'] %></h1>
     </section>
 </div>

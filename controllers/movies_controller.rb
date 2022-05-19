@@ -72,8 +72,7 @@ get '/movie_page' do
     #mov_name = mov_name.gsub(' ', '-')
  
     data = HTTParty.get("https://api.themoviedb.org/3/movie/#{mov_id}?api_key=#{api_key}&language=en-US")
-    #https://api.themoviedb.org/3/movie/973742?api_key=bccd0065ea3d007701a047a97effd92e&language=en-US
-    p data
+    
     
     erb :'movie/movie_page', locals: {
         data: data
