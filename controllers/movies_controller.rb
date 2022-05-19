@@ -1,12 +1,14 @@
 # api urls
 
-# search "https://catchtheshow.herokuapp.com/api/search?name=#{mov_name}"
+#apikey bccd0065ea3d007701a047a97effd92e
 
-# nextEp "https://catchtheshow.herokuapp.com/api/#{mov_name}"
+# search 
 
-# specific ep "https://catchtheshow.herokuapp.com/api/#{mov_name}/#{season}/#{episode}"
+# nextEp 
 
-# front page ones? https://catchtheshow.herokuapp.com/api/charts/hot
+# specific ep "
+
+# front page ones? 
 
 # for compound names its mov-mov2
 
