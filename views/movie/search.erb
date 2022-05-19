@@ -1,10 +1,25 @@
 <h1>Search Results</h1>
 
+<% if current_page != 1 %>
+    <a href="/search?mov_name=<%= mov_name %>&page_num=<%= (current_page.to_i - 1).to_s %>">Previous Page</a>
+<% end %>
+<% if !final_page %>
+    <a href="/search?mov_name=<%= mov_name %>&page_num=<%= (current_page.to_i + 1).to_s %>">Next Page</a>
+<% end %>
+
 <div class="search_results">
     <% search_results.each do |res| %>
         <div>
-            <li class="search_links"><a href="/movie_page?mov_name=<%=res['name']%>"><%=res['name']%></li>
-            <a href="m/movie_page?mov_name=<%=res['name']%>"><img src="<%= res['imageUrl']%>" alt="movie poster"></a>
+            <li class="search_links"><a href="/movie_page?mov_id=<%=res['id']%>"><%=res['original_title']%></li>
+            <a href="m/movie_page?mov_id=<%=res['id']%>"><img src="https://image.tmdb.org/t/p/w500<%= res['poster_path']%>" alt="movie poster"></a>
         </div>
     <% end %>
 </div>
+
+<% if current_page != 1 %>
+    <a href="/search?mov_name=<%= mov_name %>&page_num=<%= (current_page.to_i - 1).to_s %>">Previous Page</a>
+<% end %>
+<% if !final_page %>
+    <a href="/search?mov_name=<%= mov_name %>&page_num=<%= (current_page.to_i + 1).to_s %>">Next Page</a>
+<% end %>
+

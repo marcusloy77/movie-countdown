@@ -6,3 +6,8 @@
 .search_links {
     padding-top: 20px;
 }
+
+.movie_page {
+    display: grid;
+    grid-template-columns: 600px 600px;
+}

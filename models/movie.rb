@@ -13,3 +13,15 @@ end
 def create_movie(title, image_url)
     run_sql("INSERT INTO movies(name, image_url) VALUES($1, $2)", [title, image_url])
 end
+
+
+#for home page api requests we want to:
+#
+
+# api dev plan - #
+#1. search bar
+#2. results page
+#3. movie page
+#4. personal page
+#5. hot page
+#6. 
