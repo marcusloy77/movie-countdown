@@ -7,9 +7,6 @@ post '/sessions' do
     password = params['password']
 
     user = find_user_by_email(email)
-
-
-
     if user && BCrypt::Password.new(user['password_digest']) == password
         #log in
         session['user_id'] = user['id']

@@ -1,0 +1,8 @@
+.search_results{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search_links {
+    padding-top: 20px;
+}

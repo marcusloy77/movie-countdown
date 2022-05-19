@@ -2,8 +2,6 @@
 
 <% if logged_in? %>
     <h2>Welcome <%= current_user['name'] %></h2>
-
-
     <form action="/sessions" method="post">
         <input type="hidden" name="_method" value="delete">
         <button>Logout</button>
@@ -11,4 +9,8 @@
 <% else %>
     <a href="/sign_up">Sign Up</a>
     <a href="/login">Login</a>
+    <form action="/search"><input type="text"name="mov_name">
+        <button>Search Shows!</button>
+    </form>
 <% end %>
+

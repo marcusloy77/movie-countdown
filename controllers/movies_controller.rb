@@ -14,15 +14,20 @@
 
 
 get '/' do
-    erb :'movie/index'
+
+    movies_list = get_hots()
+
+    erb :'movie/index', locals: {
+        movies_list: movies_list
+    }
 end
 
-get '/search_results' do
+get '/search' do
     mov_name = params['mov_name']
 
-    data = HTTParty.get("https://catchtheshow.herokuapp.com/api/search?name=#{mov_name}")
+    search_results = HTTParty.get("https://catchtheshow.herokuapp.com/api/search?name=#{mov_name}")
 
-    erb :search_results, locals: {
+    erb :'movie/search', locals: {
         mov_name: mov_name,
         search_results: search_results
     }
@@ -33,7 +38,15 @@ get '/user_page' do
 end
 
 get '/movie_page' do
-    erb :movie_page
+    mov_name = params['mov_name']
+    #mov_name = mov_name.gsub(' ', '-')
+    p mov_name
+    search_results = HTTParty.get("https://catchtheshow.herokuapp.com/api/#{mov_name}")
+    p search_results
+    
+    erb :'movie/movie_page', locals: {
+        search_results: search_results
+    }
 end
 
 delete '/delete_movie' do

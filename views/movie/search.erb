@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+
+<div class="search_results">
+    <% search_results.each do |res| %>
+        <div>
+            <li class="search_links"><a href="/movie_page?mov_name=<%=res['name']%>"><%=res['name']%></li>
+            <a href="m/movie_page?mov_name=<%=res['name']%>"><img src="<%= res['imageUrl']%>" alt="movie poster"></a>
+        </div>
+    <% end %>
+</div>
