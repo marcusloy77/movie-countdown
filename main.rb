@@ -3,6 +3,9 @@
 require 'sinatra'
 require 'bcrypt'
 require 'httparty'
+require 'dotenv'
+require 'pry'
+Dotenv.load
 
 enable :sessions
 

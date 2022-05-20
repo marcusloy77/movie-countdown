@@ -1,25 +1,12 @@
 # api urls
 
-api_key = "bccd0065ea3d007701a047a97effd92e"
 
-#https://api.themoviedb.org/3/movie/550?api_key=bccd0065ea3d007701a047a97effd92e
-
-# search #https://api.themoviedb.org/3/search/movie?api_key=bccd0065ea3d007701a047a97effd92e&language=en-US&query=#{mov_name}&page=1&include_adult=false
-
-# images https://image.tmdb.org/t/p/w500/#{imageurl} 
-
-# specific ep "
-
-# front page ones? 
-
-# for compound names its mov-mov2
-
-# https://static.next-episode.net/tv-shows-images/huge/stranger-things.jpg
-
-
+api_key = ENV['API_KEY']
+#api_key = ENV['TMDB_API_KEY']
 
 
 get '/' do
+
     movie_id = 273
 
     #finds list of recent favorite movies, for user or in general if not logged in
@@ -122,11 +109,6 @@ post '/add_movie' do
         add_movie_to_user(user_id, movie_id)
         p "fav added ---------"
     end
-
-
-    #first check if movie is already in database, then
-    #when fav button clicked, record all params into post, call create movie and add movie/user id to database
-    
 
     redirect '/'
 end
