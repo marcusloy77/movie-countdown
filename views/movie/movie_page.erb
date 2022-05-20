@@ -12,3 +12,22 @@
         <h1><%= data['popularity'] %></h1>
     </section>
 </div>
+
+<% if logged_in? %>
+    <form action="/add_movie" method="POST">
+
+        <input type="hidden" name="title" value="<%=data['title']%>">
+        <input type="hidden" name="release_date" value="<%=data['release_date']%>">
+        <input type="hidden" name="cover_art" value="<%=data['poster_path']%>">
+        <input type="hidden" name="movie_id" value="<%=data['id']%>">
+        <input type="hidden" name="runtime" value="<%=data['runtime']%>">
+        <input type="hidden" name="overview" value="<%=data['overview']%>">
+        <input type="hidden" name="stat" value="<%=data['status']%>">
+
+
+        <button>Add Favorite</button>
+    </form>
+<% else %>
+    <a href="/sign_up">Sign Up</a>
+    <a href="/login">Login</a>
+<% end %>

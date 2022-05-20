@@ -1,5 +1,10 @@
 <h1>Search Results</h1>
 
+
+<form action="/search"><input type="text"name="mov_name" value="<%=mov_name%>">
+    <button>Search Shows!</button>
+</form>
+
 <% if current_page != 1 %>
     <a href="/search?mov_name=<%= mov_name %>&page_num=<%= (current_page.to_i - 1).to_s %>">Previous Page</a>
 <% end %>

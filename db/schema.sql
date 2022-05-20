@@ -21,3 +21,8 @@ CREATE TABLE movie_picks(
     user_id INTEGER,
     movie_id INTEGER
 );
+
+ALTER TABLE movies ADD COLUMN movie_id INTEGER;
+ALTER TABLE movies ADD COLUMN runtime INTEGER;
+ALTER TABLE movies ADD COLUMN overview TEXT;
+ALTER TABLE movies ADD COLUMN stat TEXT;

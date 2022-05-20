@@ -20,11 +20,21 @@ api_key = "bccd0065ea3d007701a047a97effd92e"
 
 
 get '/' do
+    movie_id = 273
 
-    #movies_list = get_hots()
+    #finds list of recent favorite movies, for user or in general if not logged in
+    if logged_in?
+        user_id = session['user_id']
+        fav_list = select_movies_by_user(user_id, 9)
+    else
+        fav_list = all_movies(9)
+    end
+
+    #uses list of favorite movie ids to find full
+
 
     erb :'movie/index', locals: {
-        #movies_list: movies_list
+        movies_list: movies_list
     }
 end
 
@@ -79,6 +89,40 @@ get '/movie_page' do
     }
 end
 
+
+
+
 delete '/delete_movie' do
+    redirect '/'
+end
+
+post '/add_movie' do
+    title = params['title']
+    release_date = params['release_date']
+    cover_art = params['cover_art']
+    movie_id = params['movie_id']
+    runtime = params['runtime']
+    overview = params['overview']
+    stat = params['stat']
+
+
+    if all_movies_by_movie_id(movie_id).nil?
+        p 'creating movie id in database --------------'
+        create_movie(title, release_date, cover_art, movie_id, runtime, overview, stat)
+    else 
+        p "movie already in database ----------------------"
+    end
+    #if movie is not already in favourites, add to favourites table
+    user_id = session['user_id']
+    if !movie_is_favorite(user_id, movie_id)
+        add_movie_to_user(user_id, movie_id)
+        p "fav added ---------"
+    end
+
+
+    #first check if movie is already in database, then
+    #when fav button clicked, record all params into post, call create movie and add movie/user id to database
+    
+
     redirect '/'
 end

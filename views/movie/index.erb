@@ -14,3 +14,17 @@
 <form action="/search"><input type="text"name="mov_name">
     <button>Search Shows!</button>
 </form>
+
+
+<% if logged_in? %>
+    <h2>Your Favourites:</h2>
+
+<% else %>
+    <h2>Recent Popular Picks</h2>
+
+<% end %>
+
+<% movies_list.each do |res| %>
+    <li class="search_links"><a href="/movie_page?mov_id=<%=res['id']%>"><%=res['original_title']%></li>
+    <a href="/movie_page?mov_id=<%=res['id']%>"><img src="https://image.tmdb.org/t/p/w500<%= res['poster_path']%>" alt="movie poster"></a>
+<% end %>
