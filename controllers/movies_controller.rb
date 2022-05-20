@@ -25,11 +25,11 @@ get '/' do
     #finds list of recent favorite movies, for user or in general if not logged in
     if logged_in?
         user_id = session['user_id']
-        fav_list = select_movies_by_user(user_id, 9)
+        fav_list = select_movies_by_user(user_id, 8)
         p "-----------------------------------"
         p fav_list
     else
-        fav_list = all_movies(9)
+        fav_list = all_movies(8)
     end
 
     movies_list = favs_to_movies(fav_list)

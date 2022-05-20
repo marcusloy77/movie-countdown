@@ -11,3 +11,11 @@
     display: grid;
     grid-template-columns: 600px 600px;
 }
+
+.home_page_top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#home_page_movies {
+    width: 200px;
+}

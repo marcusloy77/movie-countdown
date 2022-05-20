@@ -23,8 +23,11 @@
     <h2>Recent Popular Picks</h2>
 
 <% end %>
-
-<% movies_list.each do |res| %>
-    <li class="search_links"><a href="/movie_page?mov_id=<%=res['id']%>"><%=res['title']%></li>
-    <a href="/movie_page?mov_id=<%=res['id']%>"><img src="https://image.tmdb.org/t/p/w500<%= res['cover_art']%>" alt="movie poster"></a>
-<% end %>
+<div class="home_page_top">
+    <% movies_list.each do |res| %>
+        <div>
+            <li class="search_links"><a href="/movie_page?mov_id=<%=res['movie_id']%>"><%=res['title']%></li>
+            <a href="/movie_page?mov_id=<%=res['movie_id']%>"><img id="home_page_movies" src="https://image.tmdb.org/t/p/w500<%= res['cover_art']%>" alt="movie poster"></a>
+        </div>
+    <% end %>
+</div>

@@ -5,9 +5,9 @@ def all_movies_by_id(id)
     run_sql('SELECT * FROM movies WHERE id=$1', [id])[0]
 end
 #finds all movies a user has favourited
-def select_movies_by_user(user_id, limit)
-    run_sql('SELECT * FROM movies WHERE id=$1 ORDER BY id DESC LIMIT $2', [user_id, limit])
-end 
+# def select_movies_by_user(user_id, limit)
+#     run_sql('SELECT * FROM movies WHERE id=$1 ORDER BY id DESC LIMIT $2', [user_id, limit])
+# end 
 def all_movies_by_movie_id(movie_id)
     out=run_sql('SELECT * FROM movies WHERE movie_id=$1', [movie_id])
     if out.to_a.length > 0
