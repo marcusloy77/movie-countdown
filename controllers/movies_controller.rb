@@ -26,9 +26,13 @@ get '/' do
     if logged_in?
         user_id = session['user_id']
         fav_list = select_movies_by_user(user_id, 9)
+        p "-----------------------------------"
+        p fav_list
     else
         fav_list = all_movies(9)
     end
+
+    movies_list = favs_to_movies(fav_list)
 
     #uses list of favorite movie ids to find full
 

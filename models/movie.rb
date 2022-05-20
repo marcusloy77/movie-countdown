@@ -4,6 +4,10 @@ end
 def all_movies_by_id(id)
     run_sql('SELECT * FROM movies WHERE id=$1', [id])[0]
 end
+#finds all movies a user has favourited
+def select_movies_by_user(user_id, limit)
+    run_sql('SELECT * FROM movies WHERE id=$1 ORDER BY id DESC LIMIT $2', [user_id, limit])
+end 
 def all_movies_by_movie_id(movie_id)
     out=run_sql('SELECT * FROM movies WHERE movie_id=$1', [movie_id])
     if out.to_a.length > 0
@@ -22,6 +26,17 @@ def create_movie(title, release_date, cover_art, movie_id, runtime, overview, st
     run_sql("INSERT INTO movies(title, release_date, cover_art, movie_id, runtime, overview, stat) VALUES($1, $2, $3, $4, $5, $6, $7)", [title, release_date, cover_art, movie_id, runtime, overview, stat])
 end
 
+def favs_to_movies(fav_list)
+    movie_list = []
+    p "fav to movies function here"
+    fav_list.each do |fav|
+        movie_id = fav['movie_id']
+        movie = all_movies_by_movie_id(movie_id)
+        movie_list.push(movie)
+    end
+    p movie_list
+    movie_list
+end
 
 #for home page api requests we want to:
 #

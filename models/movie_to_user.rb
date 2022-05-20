@@ -3,10 +3,12 @@ def add_movie_to_user(user_id, movie_id)
     run_sql("INSERT INTO movie_picks(user_id, movie_id) VALUES($1, $2)", [user_id, movie_id])
 end
 
-#finds all movies a user has favourited
-def select_movies_by_user(user_id, limit)
-    run_sql('SELECT * FROM movie_picks WHERE user_id=$1 ORDER BY id DESC LIMIT $2', [user_id, limit])
-end 
+
+#old function, went through wrong database table
+# #finds all movies a user has favourited
+# def select_movies_by_user(user_id, limit)
+#     run_sql('SELECT * FROM movie_picks WHERE user_id=$1 ORDER BY id DESC LIMIT $2', [user_id, limit])
+# end 
 
 #finds all users that have favourited a certain movie
 def select_users_by_movie(movie_id)
