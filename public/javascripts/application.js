@@ -15,7 +15,7 @@ setInterval(function run(){
     let dateTime = date+' '+time;
 
     countdown = dateParser(dueDate) - today
-    let secondsUntil = Math.floor(countdown / 1000)
+    let secondsUntil = Math.floor(Math.abs(countdown / 1000))
     let mintuesUntil = Math.floor(secondsUntil / 60)
     let hoursUntil = Math.floor(mintuesUntil / 60)
     let daysUntil = Math.floor(hoursUntil / 24)
