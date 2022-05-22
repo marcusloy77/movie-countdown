@@ -8,7 +8,7 @@ function dateParser(domDate){
     return releaseDate
 }
 setInterval(function run(){
-
+    let released = false
     let today = new Date();
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -17,10 +17,10 @@ setInterval(function run(){
     countdown = dateParser(dueDate) - today
     let secondsUntil = Math.floor((countdown / 1000))
     if (secondsUntil > 0){
-        let released = true
+        released = true
     }
     else{
-        let released = false
+        released = false
     }
     secondsUntil = Math.abs(secondsUntil)
     let mintuesUntil = Math.floor(secondsUntil / 60)
