@@ -3,12 +3,12 @@
 <div class="movie_page">
     <img src="https://image.tmdb.org/t/p/w500<%= data['poster_path']%>" alt="movie poster">
     <section class="movie_page_text">
-        <h2>Overview: <%= data['overview'] %></h1>
+        <h2 id="a">Overview: <%= data['overview'] %></h1>
         <h1>Status: <%= data['status'] %></h1>
         <h1>Runtime (mins): <%= data['runtime'] %></h1>
-        <%if data['release_date']%>
-            <h1>Release Date:  <%= data['release_date'] %></h1>
-        <%end%>
+        
+        <h1 id="count"><%= data['release_date'] %></h1>
+        
         <h1><%= data['popularity'] %></h1>
     </section>
 </div>
