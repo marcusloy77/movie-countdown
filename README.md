@@ -17,12 +17,12 @@ Every time a movie/tv show is requested, the results required are stored in the 
 hopefully a search through database first method can then be used to not make to many api requests
 
 Controller plans:
-<ul> Get pages:
+	Get pages:
 	<li> Home/index </li>
 	<li> Search Results </li>
 	<li> Individual Movie Page </li>
 	<li> User Personal Page </li>
-</ul>
+
 Delete page needed to remove reference in database
 create page needed to add new movies to database
 
@@ -35,7 +35,7 @@ Login Page
 
 Javascript page uses Date class to calculate time until movies are coming out, reads api out and calculates based on parsing this string into Date format.
 
-Improvments I'd like to make:
+<h3> Improvments I'd like to make: </h3>
 	Find an api that has more accurace release timing, and has TV show uses as well
 	Improve the CSS of the page to make it much more profession looking
 	Improving the Countdown to account for months and years
