@@ -3,7 +3,7 @@
 link - https://ancient-brook-21026.herokuapp.com/
 
  
-Main Features;
+<h2> Main Features; </h2>
 
 -Home Page with popular options
 -login home page with all user selected options
@@ -11,18 +11,18 @@ Main Features;
 -individual movie page to see before adding to home page
 -Countdown to release date of movies
 
-DATABASE Basics - 
+<h3> DATABASE Basics - </h3>
 3 tables, one describing interaction with many to many connection, one user, one movie database
 Every time a movie/tv show is requested, the results required are stored in the database
 hopefully a search through database first method can then be used to not make to many api requests
 
 Controller plans:
-Get pages:
-	Home/index
-	Search Results
-	Individual Movie Page
-	User Personal Page
-
+<ul> Get pages:
+	<li> Home/index </li>
+	<li> Search Results </li>
+	<li> Individual Movie Page </li>
+	<li> User Personal Page </li>
+</ul>
 Delete page needed to remove reference in database
 create page needed to add new movies to database
 
