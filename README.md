@@ -16,7 +16,8 @@ link - https://ancient-brook-21026.herokuapp.com/
 Every time a movie/tv show is requested, the results required are stored in the database
 hopefully a search through database first method can then be used to not make to many api requests
 
-Controller plans:
+
+<h3> Controller plans: </h3>
 	Get pages:
 	<li> Home/index </li>
 	<li> Search Results </li>
