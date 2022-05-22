@@ -15,12 +15,19 @@ setInterval(function run(){
     let dateTime = date+' '+time;
 
     countdown = dateParser(dueDate) - today
-    let secondsUntil = Math.floor(Math.abs(countdown / 1000))
+    let secondsUntil = Math.floor((countdown / 1000))
+    if (secondsUntil > 0){
+        let released = true
+    }
+    else{
+        let released = false
+    }
+    secondsUntil = Math.abs(secondsUntil)
     let mintuesUntil = Math.floor(secondsUntil / 60)
     let hoursUntil = Math.floor(mintuesUntil / 60)
     let daysUntil = Math.floor(hoursUntil / 24)
     
-    if (secondsUntil > 0){
+    if (!released){
         document.querySelector('#count').textContent = String(daysUntil) + " days, " +String(hoursUntil % 24) + " hours, " +String(mintuesUntil % 60) +" minutes, and  " + String(secondsUntil % 60) +" seconds until release."
     }
     else {
