@@ -21,6 +21,10 @@
     <% end %>
 </div>
 
+<% if no_results%>
+    <h2>Sorry, we couldn't find what you were looking for!</h2>
+<% end %>
+
 <% if current_page != 1 %>
     <a href="/search?mov_name=<%= mov_name %>&page_num=<%= (current_page.to_i - 1).to_s %>">Previous Page</a>
 <% end %>

@@ -13,8 +13,6 @@ get '/' do
     if logged_in?
         user_id = session['user_id']
         fav_list = select_movies_by_user(user_id, 8)
-        p "-----------------------------------"
-        p fav_list
     else
         fav_list = all_movies(8)
     end
@@ -41,10 +39,13 @@ get '/search' do
     end
 
     mov_name = params['mov_name']
-
+    no_results = false
     data= HTTParty.get("https://api.themoviedb.org/3/search/movie?api_key=#{api_key}&language=en-US&query=#{mov_name}&page=#{current_page}&include_adult=false")
     search_results = data['results']
-
+    if data['results'].empty?
+        no_results = true
+    end
+   
 
     number_pages = data['total_pages']
 
@@ -56,6 +57,7 @@ get '/search' do
 
 
     erb :'movie/search', locals: {
+        no_results: no_results,
         mov_name: mov_name,
         search_results: search_results,
         final_page: final_page,
@@ -98,17 +100,13 @@ post '/add_movie' do
 
 
     if all_movies_by_movie_id(movie_id).nil?
-        p 'creating movie id in database --------------'
         create_movie(title, release_date, cover_art, movie_id, runtime, overview, stat)
     else 
-        p "movie already in database ----------------------"
     end
     #if movie is not already in favourites, add to favourites table
     user_id = session['user_id']
     if !movie_is_favorite(user_id, movie_id)
         add_movie_to_user(user_id, movie_id)
-        p "fav added ---------"
     end
-
     redirect '/'
 end

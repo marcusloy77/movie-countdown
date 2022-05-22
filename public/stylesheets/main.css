@@ -1,6 +1,7 @@
 .search_results{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 600px 600px 600px;
+    padding-left: 100px;
 }
 
 .search_links {
@@ -18,4 +19,26 @@
 }
 #home_page_movies {
     width: 200px;
+}
+
+.bigBoi {
+    background-color: rgba(3, 3, 3, 0.977);
+    color: rgb(255, 255, 255);
+}
+
+.search_links {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    padding-right: 100px;
+    list-style: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
