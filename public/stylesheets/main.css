@@ -34,6 +34,7 @@
     font-size: 30px;
     padding-right: 100px;
     list-style: none;
+    height: 140px;
 }
 
 .logo {
@@ -42,3 +43,4 @@
     justify-content: center;
 
 }
+
