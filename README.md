@@ -37,12 +37,12 @@ Login Page
 Javascript page uses Date class to calculate time until movies are coming out, reads api out and calculates based on parsing this string into Date format.
 
 <h3> Improvments I'd like to make: </h3>
-	Find an api that has more accurace release timing, and has TV show uses as well
-	Improve the CSS of the page to make it much more profession looking
-	Improving the Countdown to account for months and years
-	Create some restrictions for login/sign up details, so that the user must use a more complicated password, and can't sign up more than once with 	 the same email
-	Run a count function to properly generate popular picks, and possibly only do this from the last ~1000 picked so its recent
-	Improve the home page style+ keep popualar picks in with the favorites
+	<li> Find an api that has more accurace release timing, and has TV show uses as well. </li>
+	<li> Improve the CSS of the page to make it much more profession looking</li>
+	<li> Improving the Countdown to account for months and years</li>
+	<li> Create some restrictions for login/sign up details, so that the user must use a more complicated password, and can't sign up more than once with the same email </li>
+	<li> Run a count function to properly generate popular picks, and possibly only do this from the last ~1000 picked so its recent </li>
+	<li> Improve the home page style+ keep popualar picks in with the favorites </li>
 	
 	
 	
