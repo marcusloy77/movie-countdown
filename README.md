@@ -2,6 +2,8 @@
 
 link - https://ancient-brook-21026.herokuapp.com/
 
+<h2> Tech Stack </h2>
+ - PSQL, Javascript, Sinatra, Ruby
  
 <h2> Main Features; </h2>
 
