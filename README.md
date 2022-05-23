@@ -43,6 +43,7 @@ Javascript page uses Date class to calculate time until movies are coming out, r
 	<li> Create some restrictions for login/sign up details, so that the user must use a more complicated password, and can't sign up more than once with the same email </li>
 	<li> Run a count function to properly generate popular picks, and possibly only do this from the last ~1000 picked so its recent </li>
 	<li> Improve the home page style+ keep popualar picks in with the favorites </li>
+	<li> Add the countdown funcionality to the home page and make it more an overlay than just text </li>
 	
 	
 	
