@@ -41,6 +41,12 @@ Javascript page uses Date class to calculate time until movies are coming out, r
 	Improve the CSS of the page to make it much more profession looking
 	Improving the Countdown to account for months and years
 	Create some restrictions for login/sign up details, so that the user must use a more complicated password, and can't sign up more than once with 	 the same email
+	Run a count function to properly generate popular picks, and possibly only do this from the last ~1000 picked so its recent
+	Improve the home page style+ keep popualar picks in with the favorites
+	
+	
+	
+	
 	
 	
 	
