@@ -1,6 +1,6 @@
 <h1> Movie/TV Countdown </h1>
 
-link - https://ancient-brook-21026.herokuapp.com/
+link - https://movie-countdown.herokuapp.com/
 
 <h2> Tech Stack </h2>
  - PSQL, Javascript, Sinatra, Ruby
